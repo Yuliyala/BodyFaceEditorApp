@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Настройка фона для тестирования Git
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemGreen
     }
 
 
