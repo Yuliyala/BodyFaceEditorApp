@@ -12,7 +12,7 @@ class OnboardingPaywallView: RootView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Inter-Bold", size: 28) ?? UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.font = UIFont(name: "Inter-ExtraBold", size: 28) ?? UIFont.systemFont(ofSize: 28, weight: .heavy)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -22,7 +22,7 @@ class OnboardingPaywallView: RootView {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Inter-Regular", size: 15) ?? UIFont.systemFont(ofSize: 15, weight: .regular)
-        label.textColor = UIColor.white.withAlphaComponent(0.9)
+        label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -49,7 +49,9 @@ class OnboardingPaywallView: RootView {
         return button
     }()
     
-    let progressBar = OnboardingProgressView(count: 4)
+    let progressBar = OnboardingProgressView(count: 5)
+    
+    private let privacyTextView = PrivacyTextView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,20 +65,22 @@ class OnboardingPaywallView: RootView {
     
     private func setup() {
         [
-            imageView, titleLabel, descriptionLabel, progressBar, continueButton, restoreButton, closeButton
+            imageView, titleLabel, descriptionLabel, progressBar, 
+            continueButton, restoreButton, closeButton, privacyTextView
         ].forEach(addSubview(_:))
+    
         setupConstraints()
     }
     
     private func setupConstraints() {
         imageView.snp.makeConstraints {
             if isSmallScreen || isIpad {
-                $0.top.equalToSuperview().offset(20)
+                $0.top.equalToSuperview()
             } else {
-                $0.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+                $0.top.equalTo(safeAreaLayoutGuide.snp.top)
             }
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalToSuperview().multipliedBy(0.4)
+            $0.height.equalToSuperview().multipliedBy(0.6)
         }
         
         let overlayView = UIView()
@@ -89,7 +93,7 @@ class OnboardingPaywallView: RootView {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(32)
+            $0.top.equalTo(imageView.snp.bottom).offset(8)
             $0.horizontalEdges.equalToSuperview().inset(16)
         }
         
@@ -107,6 +111,12 @@ class OnboardingPaywallView: RootView {
             $0.top.equalTo(progressBar.snp.bottom).offset(24)
             $0.height.equalTo(isSmallScreen ? 44 : 56)
             $0.horizontalEdges.equalToSuperview().inset(16)
+        }
+        
+        privacyTextView.snp.makeConstraints {
+            $0.top.equalTo(continueButton.snp.bottom).offset(8)
+            $0.height.equalTo(30)
+            $0.centerX.equalToSuperview()
             $0.bottom.equalTo(safeAreaLayoutGuide).offset(-30)
         }
         
@@ -127,7 +137,7 @@ class OnboardingPaywallView: RootView {
         buttonTitle: String,
         progressIndex: Int
     ) {
-        imageView.image = UIImage(named: "paywall_onboarding") // Картинка будет добавлена позже
+        imageView.image = UIImage(named: "picture") // Используем картинку picture
         titleLabel.text = title
         descriptionLabel.text = description
         continueButton.setTitle(buttonTitle, for: .normal)

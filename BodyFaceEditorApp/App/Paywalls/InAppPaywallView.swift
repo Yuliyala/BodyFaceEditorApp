@@ -27,7 +27,7 @@ class InAppPaywallView: RootView {
     private let tapeImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "tape") // Нужно добавить картинку измерительной ленты
+        imageView.image = UIImage(named: "picture") // Нужно добавить картинку измерительной ленты
         return imageView
     }()
     

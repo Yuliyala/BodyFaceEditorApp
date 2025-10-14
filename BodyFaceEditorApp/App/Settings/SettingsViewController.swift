@@ -48,15 +48,11 @@ class SettingsViewController: GenericViewController<SettingsView> {
     }
     
     private func openTerms() {
-        if let url = URL(string: Constants.termsOfUseURL) {
-            UIApplication.shared.open(url)
-        }
+        BrowserPresenter.presentInAppBrowser(with: Constants.termsOfUseURL)
     }
     
     private func openPrivacy() {
-        if let url = URL(string: Constants.privacyPolicyURL) {
-            UIApplication.shared.open(url)
-        }
+        BrowserPresenter.presentInAppBrowser(with: Constants.privacyPolicyURL)
     }
     
     private func showSuccessAlert(message: String) {
