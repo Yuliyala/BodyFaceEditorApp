@@ -1,5 +1,5 @@
 {
-  "identifier" : "StoreKitConfiguration",
+  "identifier" : "BodyFaceEditorApp",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -10,8 +10,8 @@
       "internalID" : "bodyfaceeditorapp_wk_799",
       "localizations" : [
         {
-          "description" : "Weekly subscription with 3-day trial",
-          "displayName" : "Weekly Subscription",
+          "description" : "Weekly subscription for Body & Face Editor",
+          "displayName" : "Weekly Premium",
           "locale" : "en_US"
         }
       ],
@@ -25,8 +25,8 @@
       "internalID" : "bodyfaceeditorapp_mo_1999",
       "localizations" : [
         {
-          "description" : "Monthly subscription",
-          "displayName" : "Monthly Subscription",
+          "description" : "Monthly subscription for Body & Face Editor",
+          "displayName" : "Monthly Premium",
           "locale" : "en_US"
         }
       ],
@@ -40,19 +40,19 @@
       "internalID" : "bodyfaceeditorapp_wk_599",
       "localizations" : [
         {
-          "description" : "Weekly sale subscription with 3-day trial",
-          "displayName" : "Weekly Sale",
+          "description" : "Weekly sale subscription for Body & Face Editor",
+          "displayName" : "Weekly Premium Sale",
           "locale" : "en_US"
         }
       ],
       "productID" : "bodyfaceeditorapp_wk_599",
-      "referenceName" : "Weekly Sale",
+      "referenceName" : "Weekly Sale Subscription",
       "type" : "RecurringSubscription"
     }
   ],
   "settings" : {
-    "_applicationInternalID" : "987654321",
-    "_developerTeamID" : "YOUR_TEAM_ID",
+    "_applicationInternalID" : "1234567890",
+    "_developerTeamID" : "ABCD123456",
     "_failTransactionsEnabled" : false,
     "_lastSynchronizedDate" : 757382400.0,
     "_locale" : "en_US",
@@ -110,11 +110,11 @@
       "id" : "21482456",
       "localizations" : [
         {
-          "displayName" : "BodyFaceEditor Subscriptions",
+          "displayName" : "Premium Subscription",
           "locale" : "en_US"
         }
       ],
-      "name" : "BodyFaceEditor Subscriptions",
+      "name" : "Premium Subscription",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -127,16 +127,11 @@
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "bodyfaceeditorapp_wk_799",
-          "introductoryOffer" : {
-            "internalID" : "bodyfaceeditorapp_wk_799_intro",
-            "numberOfPeriods" : 1,
-            "paymentMode" : "free",
-            "subscriptionPeriod" : "P3D"
-          },
+          "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Weekly subscription with 3-day trial",
-              "displayName" : "Weekly Subscription",
+              "description" : "Weekly subscription for Body & Face Editor",
+              "displayName" : "Weekly Premium",
               "locale" : "en_US"
             }
           ],
@@ -160,8 +155,8 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Monthly subscription",
-              "displayName" : "Monthly Subscription",
+              "description" : "Monthly subscription for Body & Face Editor",
+              "displayName" : "Monthly Premium",
               "locale" : "en_US"
             }
           ],
@@ -182,22 +177,17 @@
           "familyShareable" : false,
           "groupNumber" : 3,
           "internalID" : "bodyfaceeditorapp_wk_599",
-          "introductoryOffer" : {
-            "internalID" : "bodyfaceeditorapp_wk_599_intro",
-            "numberOfPeriods" : 1,
-            "paymentMode" : "free",
-            "subscriptionPeriod" : "P3D"
-          },
+          "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Weekly sale subscription with 3-day trial",
-              "displayName" : "Weekly Sale",
+              "description" : "Weekly sale subscription for Body & Face Editor",
+              "displayName" : "Weekly Premium Sale",
               "locale" : "en_US"
             }
           ],
           "productID" : "bodyfaceeditorapp_wk_599",
           "recurringSubscriptionPeriod" : "P1W",
-          "referenceName" : "Weekly Sale",
+          "referenceName" : "Weekly Sale Subscription",
           "subscriptionGroupID" : "21482456",
           "type" : "RecurringSubscription"
         }

@@ -11,6 +11,10 @@ public final class AppHudService {
 
     public private(set) lazy var hasSubscribed: Bool = Apphud.hasPremiumAccess() || Apphud.hasActiveSubscription()
     
+    public var hasActiveSubscription: Bool {
+        return hasSubscribed
+    }
+    
     public var hasTrial: Bool = false
     public var hasLimitedTrial = false
     

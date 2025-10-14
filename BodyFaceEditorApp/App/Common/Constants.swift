@@ -1,10 +1,3 @@
-//
-//  Constants.swift
-//  Body Face Editor App
-//
-//  Created by Yuliya Lapenak on 10/12/25.
-//
-
 import Foundation
 
 struct Constants {

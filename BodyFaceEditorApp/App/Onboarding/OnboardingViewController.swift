@@ -25,8 +25,9 @@ class OnboardingViewController: GenericViewController<OnboardingView> {
             title: onboarding.title,
             body: onboarding.body,
             image: onboarding.bgImage,
-            buttonTitle: "Continue",
-            progressIndex: onboarding.progressIndex
+            buttonTitle: NSLocalizedString("continue.button", comment: "Continue button text"),
+            progressIndex: onboarding.progressIndex,
+            isPaywall: false
         )
         rootView.continueButton.addAction(UIAction(handler: { [weak self] _ in
             self?.continueTapped()
@@ -49,7 +50,6 @@ class OnboardingViewController: GenericViewController<OnboardingView> {
         if let next = self.onboarding.next {
             self.coordinator?.openOnboarding(next)
         } else {
-            LocalStorage.shared.markIntroAsShown()
             self.coordinator?.paywallAfterOnboarding()
         }
     }

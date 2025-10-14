@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="BackgroundImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="AppIconImageView">
                                 <rect key="frame" x="136.66666666666666" y="366" width="120" height="120"/>
                                 <constraints>
@@ -33,6 +36,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="BackgroundImageView" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="BackgroundTop"/>
+                            <constraint firstItem="BackgroundImageView" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BackgroundLeading"/>
+                            <constraint firstItem="BackgroundImageView" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="BackgroundTrailing"/>
+                            <constraint firstItem="BackgroundImageView" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="BackgroundBottom"/>
                             <constraint firstItem="AppIconImageView" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AppIconCenterX"/>
                             <constraint firstItem="AppIconImageView" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="AppIconCenterY"/>
                             <constraint firstItem="AppNameLabel" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AppNameCenterX"/>
@@ -47,6 +54,7 @@
     </scenes>
     <resources>
         <image name="AppIcon" width="120" height="120"/>
+        <image name="bg" width="393" height="852"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

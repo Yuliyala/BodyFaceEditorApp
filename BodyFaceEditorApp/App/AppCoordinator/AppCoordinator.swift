@@ -1,37 +1,30 @@
-//
-//  AppCoordinator.swift
-//  Body Face Editor App
-//
-//  Created by Yuliya Lapenak on 10/12/25.
-//
-
 import UIKit
 
 class AppCoordinator: UINavigationController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        startApp()
+    
+    init() {
+        super.init(rootViewController: SplashViewController())
+        setNavigationBarHidden(true, animated: false)
     }
-
-    private func startApp() {
-        let splashVC = SplashViewController()
-        setViewControllers([splashVC], animated: false)
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func openOnboarding(_ onboarding: Onboarding = .first) {
-        print("🎯 AppCoordinator: Открываем онбординг - \(onboarding)")
-        let onboardingVC = OnboardingViewController(onboarding: onboarding)
-        setViewControllers([onboardingVC], animated: true)
+        pushViewController(OnboardingViewController(onboarding: onboarding), animated: false)
+    }
+
+    func openApp() {
+        pushViewController(TabBarCoordinator(), animated: true)
     }
     
     func paywallAfterOnboarding() {
-        // TODO: Implement paywall after onboarding
-        openApp()
+        pushViewController(OnboardingPaywallViewController(), animated: false)
     }
-    
-    func openApp() {
-        let mainVC = MainViewController()
-        setViewControllers([mainVC], animated: true)
+
+    func openAppAfterOnboarding() {
+        LocalStorage.shared.markIntroAsShown()
+        self.viewControllers = [TabBarCoordinator()]
     }
 }
