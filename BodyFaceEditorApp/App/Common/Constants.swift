@@ -20,6 +20,10 @@ struct Constants {
     static let supportURL = URL(string: "https://docs.google.com/document/d/1yfbpGnE_uHAVRJLHIyuEIppCXMB33ioyy4YOXU4Wos0/edit?usp=sharing")!
     static let email = "aboba@gmail.com"
     
+    // MARK: - Legal URLs
+    static let termsOfUseURL = "https://docs.google.com/document/d/1lln6dRXD9uQOJwEA0e8bi7dM4zTruhvkW5nyTkBVtM8/edit?usp=sharing"
+    static let privacyPolicyURL = "https://docs.google.com/document/d/1ml9u1eoy4zolDRK7OUUSE2WTtxGoXrjsjCqw-RH5Amk/edit?usp=sharing"
+    
     // MARK: - Products
     struct Products {
         static let weeklySubscription = "bodyfaceeditorapp_wk_799"

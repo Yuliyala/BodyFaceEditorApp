@@ -16,7 +16,9 @@ class AppCoordinator: UINavigationController {
     }
 
     func openApp() {
-        pushViewController(TabBarCoordinator(), animated: true)
+        let mainVC = MainViewController()
+        mainVC.coordinator = self
+        pushViewController(mainVC, animated: true)
     }
     
     func paywallAfterOnboarding() {
@@ -25,6 +27,34 @@ class AppCoordinator: UINavigationController {
 
     func openAppAfterOnboarding() {
         LocalStorage.shared.markIntroAsShown()
-        self.viewControllers = [TabBarCoordinator()]
+        let mainVC = MainViewController()
+        mainVC.coordinator = self
+        self.viewControllers = [mainVC]
+    }
+    
+    func showInAppPaywall() {
+        let paywallVC = InAppPaywallViewController()
+        paywallVC.coordinator = self
+        present(paywallVC, animated: true)
+    }
+    
+    func dismissPaywall() {
+        dismiss(animated: true)
+    }
+    
+    func showSettings() {
+        let settingsVC = SettingsViewController()
+        settingsVC.coordinator = self
+        present(settingsVC, animated: true)
+    }
+    
+    func dismissSettings() {
+        dismiss(animated: true)
+    }
+    
+    func showLimitedPaywall() {
+        let paywallVC = LimitedPaywallViewController()
+        paywallVC.coordinator = self
+        present(paywallVC, animated: true)
     }
 }

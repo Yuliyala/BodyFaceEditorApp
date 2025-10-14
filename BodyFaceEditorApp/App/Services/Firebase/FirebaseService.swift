@@ -12,6 +12,10 @@ class FirebaseService {
     var isGreyFlowEnabled: Bool {
         remoteConfig?.configValue(forKey: Constants.remoteConfigKey).boolValue ?? false
     }
+    
+    var isTrialAvailable: Bool {
+        remoteConfig?.configValue(forKey: "is_trial_available").boolValue ?? true
+    }
 
     func setup() {
         remoteConfig = RemoteConfig.remoteConfig()

@@ -72,7 +72,17 @@ class OnboardingPaywallViewController: GenericViewController<OnboardingPaywallVi
     }
     
     private func handleClose() {
-        coordinator?.openAppAfterOnboarding()
+        if FirebaseService.shared.isGreyFlowEnabled {
+            let limited = LimitedPaywallViewController()
+            limited.closeCallback = { [weak self] in
+                self?.dismiss(animated: true)
+                self?.coordinator?.openAppAfterOnboarding()
+            }
+            limited.modalPresentationStyle = .fullScreen
+            present(limited, animated: true)
+        } else {
+            coordinator?.openAppAfterOnboarding()
+        }
     }
     
     private func showErrorAlert(message: String) {
